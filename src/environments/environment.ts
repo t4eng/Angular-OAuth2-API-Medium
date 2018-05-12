@@ -7,4 +7,4 @@ export const environment = {
   },
   redirectUri: 'http://127.0.0.1:4200',
   Host: 'https://api.medium.com/v1',
-};
+}
