@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module'
 
 //service
 import { OAuthService } from './service/oauth.service'
+import { ProfileService } from './service/profile.service'
 
 //page
 import { CallbackComponent } from './component/callback/callback.component'
@@ -31,7 +32,8 @@ import { HomeComponent } from './component/home/home.component'
     SharedModule
   ],
   providers: [
-    OAuthService
+    OAuthService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
