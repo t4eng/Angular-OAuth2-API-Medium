@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from '../../../environments/environment';
 import { ProfileService } from '../../service/profile.service'
 import { Profile } from '../../model/profile'
+import { FollowingService } from '../../service/following.service'
 
 @Component({
     selector: 'app-profile',
@@ -12,7 +13,8 @@ import { Profile } from '../../model/profile'
 
 export class ProfileComponent implements OnInit {
     constructor(
-        private profileService : ProfileService
+        private profileService : ProfileService,
+        private followingService: FollowingService
     ) { }
 
     showForm = false;
@@ -26,13 +28,31 @@ export class ProfileComponent implements OnInit {
 
          this.proFile = JSON.parse(localStorage.getItem("userProfile")).data
          this.showForm = true
+
+             if(this.followingService.getFollowing()){
+              this.followingService.getFollowing().subscribe( res => {
+              localStorage.setItem('following', JSON.stringify(res))
+               })
+             }
        })  
     }   
 
+  
+  
+     
+
     if(localStorage.getItem("userProfile")){
          this.proFile = JSON.parse(localStorage.getItem("userProfile")).data
-         this.showForm = true
+         this.showForm = true;
+
+        //  if(this.followingService.getFollowing()){
+        //     this.followingService.getFollowing().subscribe( res => {
+        //         localStorage.setItem('following', JSON.stringify(res))
+        //     })
+        // }
     }
+
+
 
     // var check_profile = localStorage.getItem('userProfile')
     //   if (check_profile) {
