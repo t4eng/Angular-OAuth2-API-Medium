@@ -12,9 +12,6 @@ export class AppComponent implements OnInit {
 
   ){}
   
-  scope = 'basicProfile,publishPost,listPublications';
-  Url = 'https://medium.com/m/oauth/authorize?' + 'client_id=' + environment.API_SECRET.clientId + '&scope=' + this.scope + '&state=state&response_type=code&redirect_uri=' + environment.redirectUri;
-
   ngOnInit(){
     
   }

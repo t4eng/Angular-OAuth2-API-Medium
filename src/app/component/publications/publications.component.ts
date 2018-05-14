@@ -26,14 +26,12 @@ export class PublicationsComponent implements OnInit {
             if (localStorage.getItem('publicationsList')) {
                 this.publications = JSON.parse(localStorage.getItem('publicationsList')).data
                 this.showPublications = true;
-                console.log(this.publications)
                 }
           })
         }
-        // if (localStorage.getItem('publicationsList')) {
-        // this.publications = JSON.parse(localStorage.getItem('publicationsList')).data
-        // this.showPublications = true;
-        // console.log(this.publications)
-        // }
+        if (localStorage.getItem('publicationsList')) {
+        this.publications = JSON.parse(localStorage.getItem('publicationsList')).data
+        this.showPublications = true;
+        }
   }
 }

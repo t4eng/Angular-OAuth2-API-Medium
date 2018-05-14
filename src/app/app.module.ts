@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 
 //shared
-import { SharedModule } from './shared/shared.module'
+import { SharedModule } from './component/shared/shared.module'
 
 //routing
 import { AppRoutingModule } from './app-routing.module'
@@ -14,16 +14,19 @@ import { AppRoutingModule } from './app-routing.module'
 //service
 import { OAuthService } from './service/oauth.service'
 import { ProfileService } from './service/profile.service'
+import { PublicationsService } from './service/publications.service'
 
 //page
 import { CallbackComponent } from './component/callback/callback.component'
-import { HomeComponent } from './component/home/home.component'
+import { ProfileComponent } from './component/profile/profile.component'
+import { PublicationsComponent } from './component/publications/publications.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CallbackComponent,
-    HomeComponent
+    ProfileComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { HomeComponent } from './component/home/home.component'
   ],
   providers: [
     OAuthService,
-    ProfileService
+    ProfileService,
+    PublicationsService
   ],
   bootstrap: [AppComponent]
 })

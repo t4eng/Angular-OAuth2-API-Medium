@@ -19,12 +19,11 @@ export class OAuthService {
             .subscribe(params => {
                 if (params.code) { code = params.code }
             })
-        const body = 'code=' + code + '&client_id=' + environment.API_SECRET.clientId + '&client_secret=' + environment.API_SECRET.clientSecret + '&grant_type=authorization_code&redirect_uri=' + environment.redirectUri
+        const body = 'code=' + code + '&client_id=' + environment.clientId + '&client_secret=' + environment.clientSecret + '&grant_type=authorization_code&redirect_uri=' + environment.redirectUri
         return this.http.post(environment.Host + '/tokens', body, {
             headers: new HttpHeaders({ 'Content-type': 'application/x-www-form-urlencoded' })
         }).subscribe(params => {
             localStorage.setItem("accessToken", JSON.stringify(params))
-            console.log(JSON.stringify(params))
         })
     }
 
@@ -45,7 +44,7 @@ export class OAuthService {
     refreshToken() {
         this.accessToken = JSON.parse(localStorage.getItem('accessToken'))
         var refresh_token = this.accessToken.refresh_token
-        const body = 'refresh_token=' + refresh_token + '&client_id=' + environment.API_SECRET.clientId + '&client_secret=' + environment.API_SECRET.clientSecret + '&grant_type=refresh_token'
+        const body = 'refresh_token=' + refresh_token + '&client_id=' + environment.clientId + '&client_secret=' + environment.clientSecret + '&grant_type=refresh_token'
 
         this.http.post(environment.Host + '/tokens', body, {
             headers: new HttpHeaders({ 'Content-type': 'application/x-www-form-urlencoded' })
