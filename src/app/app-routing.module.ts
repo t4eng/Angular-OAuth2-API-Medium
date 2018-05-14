@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { CallbackComponent } from './component/callback/callback.component'
-import { HomeComponent } from './component/home/home.component'
-
+import { ProfileComponent } from './component/profile/profile.component'
+import { PublicationsComponent } from './component/publications/publications.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'callback', component: CallbackComponent }
+  { path: 'callback', component: CallbackComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'publications', component: PublicationsComponent }
 ];
 
 @NgModule({
