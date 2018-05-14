@@ -1,0 +1,25 @@
+.img-following {
+    width: 50px;
+    height: 50px;
+  }
+
+.div-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-topic{
+    margin-bottom: 20px;
+}
+
+.font-topic {
+    font-weight: bold;
+}
+
+.div-name-following, .div-img-following{
+    margin-bottom: 10px;
+}
+
+a:hover{
+    text-decoration: none;
+}
