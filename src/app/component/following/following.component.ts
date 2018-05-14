@@ -21,9 +21,7 @@ export class FollowingComponent implements OnInit {
 
   ngOnInit() {
 
-    var check_tokens = localStorage.getItem('accessToken')
     if (localStorage.getItem('userProfile') && localStorage.getItem('following')) {
-
       this.proFile = JSON.parse(localStorage.getItem("userProfile")).data
       this.Following = JSON.parse(localStorage.getItem('following')).payload.references.User
       this.limitShow = JSON.parse(localStorage.getItem('following')).payload.paging.next.limit

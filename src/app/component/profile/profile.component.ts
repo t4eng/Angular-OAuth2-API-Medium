@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 import { ProfileService } from '../../service/profile.service'
 import { Profile } from '../../model/profile'
 import { FollowingService } from '../../service/following.service'
+import { FollowersService } from '../../service/followers.service'
 
 @Component({
     selector: 'app-profile',
@@ -14,7 +15,8 @@ import { FollowingService } from '../../service/following.service'
 export class ProfileComponent implements OnInit {
     constructor(
         private profileService : ProfileService,
-        private followingService: FollowingService
+        private followingService: FollowingService,
+        private followersService: FollowersService
     ) { }
 
     showForm = false;
@@ -33,6 +35,12 @@ export class ProfileComponent implements OnInit {
               this.followingService.getFollowing().subscribe( res => {
               localStorage.setItem('following', JSON.stringify(res))
                })
+             }
+
+             if(this.followersService.getFollowers()){
+                this.followersService.getFollowers().subscribe( res => {
+                localStorage.setItem('followers', JSON.stringify(res))
+                 })
              }
        })  
     }   
