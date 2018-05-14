@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+          <div class="col-sm-6 div-center">
+          <br/>
+          <div class="row">
+               <div class='div-topic div-center'>
+                   <span class='font-topic'>{{proFile.name}}</span> 
+                   is 
+                   <span class='font-topic'>following </span>
+                   (Limit: {{this.limitShow}}) 
+                   by
+                </div>
+          </div>
+
+<div class="row">
+  <div class="div-center">
+    <span *ngFor="let key of objectKeys(Following)">
+        <div class="div-name-following">
+        <a href="https://medium.com/@{{Following[key].username}}">{{Following[key].name}}</a>
+        </div>
+        <div class="div-img-following">
+        <a href="https://medium.com/@{{Following[key].username}}">
+        <img src="https://cdn-images-1.medium.com/fit/c/120/120/{{Following[key].imageId}}" class="img-following" />
+        </a>
+       </div>
+       {{Following[key].bio}}
+       <hr>
+    </span>
+  </div>
+</div>
+
+</div></div></div>
