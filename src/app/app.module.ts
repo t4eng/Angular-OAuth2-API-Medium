@@ -15,18 +15,21 @@ import { AppRoutingModule } from './app-routing.module'
 import { OAuthService } from './service/oauth.service'
 import { ProfileService } from './service/profile.service'
 import { PublicationsService } from './service/publications.service'
+import { FollowingService } from './service/following.service'
 
 //page
 import { CallbackComponent } from './component/callback/callback.component'
 import { ProfileComponent } from './component/profile/profile.component'
 import { PublicationsComponent } from './component/publications/publications.component'
+import { FollowingComponent } from './component/following/following.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CallbackComponent,
     ProfileComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    FollowingComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { PublicationsComponent } from './component/publications/publications.com
   providers: [
     OAuthService,
     ProfileService,
-    PublicationsService
+    PublicationsService,
+    FollowingService
   ],
   bootstrap: [AppComponent]
 })

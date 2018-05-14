@@ -2,8 +2,21 @@
 <ul class="sidenav">
     <li><a href="http://127.0.0.1:4200/profile">Profile</a></li>
     <li><a href="http://127.0.0.1:4200/publications">Publications</a></li>
-    <li><a href="http://127.0.0.1:4200/following">Following</a></li>
-    <li><a href="http://127.0.0.1:4200/followers">Follower</a></li>
+    <li>
+        <a href="http://127.0.0.1:4200/following"> Following 
+            <span *ngFor="let key of objectKeys(FollowedCount)">
+                    ({{FollowedCount[key].usersFollowedCount}})
+            </span>
+        </a>
+  
+    </li>
+    <li>
+        <a href="http://127.0.0.1:4200/followers"> Followers
+            <span *ngFor="let key of objectKeys(FollowedCount)">
+                    ({{FollowedCount[key].usersFollowedByCount}})
+             </span>
+        </a>
+    </li>
     <li><a href="http://127.0.0.1:4200"><span (click)="signOut()">Sign out</span></a></li>
 </ul>
 </div>
