@@ -1,0 +1,26 @@
+<div *ngIf="showPublications">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 div-center">
+        <font class='font-topic space-publications'>Publications</font>
+          <br/>
+          <ul>
+            <li *ngFor="let publication of publications ">
+              <p></p>
+              <a [href]="publication.url">
+                <span class='font-title space-publications'>{{publication.name}}​</span>
+                <p></p>
+              </a>
+              <a [href]="publication.url">
+                <img [src]="publication.imageUrl" class="img-publications" />
+              </a>
+              <br/>
+              <p class="font-description">Description:</p>
+              <p class="space-publications">{{publication.description}}​</p>
+              <hr>
+            </li>
+          </ul>
+          </div>
+     </div>
+</div>      
+</div>

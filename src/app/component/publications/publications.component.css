@@ -1,0 +1,30 @@
+.font-topic {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.font-title {
+    font-size: 20px;
+    color: blue;
+}
+
+.font-description {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.space-publications .font-description{
+    margin-right: 10em;
+}
+  
+.img-publications {
+    width: 100px;
+    height: 100px;
+  }
+  
+
+  
+.div-center{
+    margin-left: auto;
+    margin-right: auto;
+}
