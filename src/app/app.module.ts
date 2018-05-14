@@ -16,12 +16,14 @@ import { OAuthService } from './service/oauth.service'
 import { ProfileService } from './service/profile.service'
 import { PublicationsService } from './service/publications.service'
 import { FollowingService } from './service/following.service'
+import { FollowersService } from './service/followers.service'
 
 //page
 import { CallbackComponent } from './component/callback/callback.component'
 import { ProfileComponent } from './component/profile/profile.component'
 import { PublicationsComponent } from './component/publications/publications.component'
 import { FollowingComponent } from './component/following/following.component'
+import { FollowersComponent } from './component/followers/followers.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { FollowingComponent } from './component/following/following.component'
     CallbackComponent,
     ProfileComponent,
     PublicationsComponent,
-    FollowingComponent
+    FollowingComponent,
+    FollowersComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { FollowingComponent } from './component/following/following.component'
     OAuthService,
     ProfileService,
     PublicationsService,
-    FollowingService
+    FollowingService,
+    FollowersService
   ],
   bootstrap: [AppComponent]
 })
